@@ -76,20 +76,5 @@ public class FlashlightController : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-
-        Vector3 origin = transform.position + Vector3.up * 0.5f;
-
-        Gizmos.DrawRay(origin, transform.forward * range);
-
-        float angle = Mathf.Acos(dotThreshold) * Mathf.Rad2Deg;
-
-        Vector3 leftBoundary = Quaternion.Euler(0f, -angle, 0f) * transform.forward;
-        Vector3 rightBoundary = Quaternion.Euler(0f, angle, 0f) * transform.forward;
-
-        Gizmos.DrawRay(origin, leftBoundary * range);
-        Gizmos.DrawRay(origin, rightBoundary * range);
-    }
+    
 }
